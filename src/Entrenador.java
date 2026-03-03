@@ -7,7 +7,7 @@
  * Esta clase actúa como entidad del dominio y encapsula sus datos,
  * permitiendo el acceso únicamente a través de métodos públicos.
  *
- * @author Luis García Sánchez
+ * @author Mario Molinero Carreras
  * @version 1.0
  */
 public class Entrenador {

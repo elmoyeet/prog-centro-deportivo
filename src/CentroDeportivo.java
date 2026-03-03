@@ -18,8 +18,60 @@
  * Esta clase actúa como contenedor y gestiona la lógica de almacenamiento
  * y acceso a los objetos {@link Entrenador}.
  *
- * @author Luis García Sánchez
+ * @author Mario Molinero Carreras
  * @version 1.0
  */
 public class CentroDeportivo {
+    private Entrenador[] entrenadores;
+    private final int NUM_MAX_ENTRENADORES;
+
+    public CentroDeportivo(int cantidad_max_entrenadores) {
+        if (cantidad_max_entrenadores > 0) {
+            NUM_MAX_ENTRENADORES = cantidad_max_entrenadores;
+        } else {
+            NUM_MAX_ENTRENADORES = 10; // Si pasan un número negativo ponemos 10 por defecto.
+        }
+
+        entrenadores = new Entrenador[NUM_MAX_ENTRENADORES];
+    }
+
+    public Entrenador buscarEntrenador(int id) {
+        boolean seguirBuscando = true;
+        int numeroEntrenador = 0;
+
+        for (int i = 0; i < NUM_MAX_ENTRENADORES && seguirBuscando; i++) {
+            if (entrenadores[i].getId() == id) {
+                seguirBuscando = false;
+                numeroEntrenador = i;
+            }
+        }
+        return entrenadores[numeroEntrenador];
+    }
+
+    private int buscarPrimerHuecoLibre() {
+        int primeraPosicionLibre = 0;
+        boolean seguirBuscando = true;
+
+        for (int i = 0; i < NUM_MAX_ENTRENADORES && seguirBuscando; i++) {
+            if (entrenadores[i] == null) {
+                seguirBuscando = false;
+                primeraPosicionLibre = i;
+            }
+        }
+        return primeraPosicionLibre;
+    }
+
+    public boolean registrarEntrenador(Entrenador entrenador) {
+
+    }
+
+    public String mostrarEntrenadores() {
+
+    }
+
+    public int contarEntrenadores() {
+
+    }
+
+
 }
