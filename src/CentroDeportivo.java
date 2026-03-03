@@ -36,16 +36,14 @@ public class CentroDeportivo {
     }
 
     public Entrenador buscarEntrenador(int id) {
-        boolean seguirBuscando = true;
-        int numeroEntrenador = 0;
-
-        for (int i = 0; i < NUM_MAX_ENTRENADORES && seguirBuscando; i++) {
-            if (entrenadores[i].getId() == id) {
-                seguirBuscando = false;
-                numeroEntrenador = i;
+        for (int i = 0; i < NUM_MAX_ENTRENADORES; i++) {
+            if (entrenadores[i] != null) {
+                if (entrenadores[i].getId() == id) {
+                    return entrenadores[i];
+                }
             }
         }
-        return entrenadores[numeroEntrenador];
+        return null;
     }
 
     private int buscarPrimerHuecoLibre() {
