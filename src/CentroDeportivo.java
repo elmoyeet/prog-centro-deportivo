@@ -62,7 +62,19 @@ public class CentroDeportivo {
     }
 
     public boolean registrarEntrenador(Entrenador entrenador) {
+        boolean entrenadorAnadido = false;
+        int posicion;
 
+
+        if (buscarEntrenador(entrenador.getId()) == null) {
+            posicion = buscarPrimerHuecoLibre();
+            if (posicion >= 0) {
+                entrenadores[posicion] = entrenador;
+                entrenadorAnadido = true;
+            }
+
+        }
+        return  entrenadorAnadido;
     }
 
     public String mostrarEntrenadores() {
