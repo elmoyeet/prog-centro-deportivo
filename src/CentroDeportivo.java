@@ -92,6 +92,14 @@ public class CentroDeportivo {
     }
 
     public int contarEntrenadores() {
+        int contadorEntrenadores = 0;
+
+        for (int i = 0; i < NUM_MAX_ENTRENADORES; i++) {
+            if (entrenadores[i] != null) {
+                contadorEntrenadores++;
+            }
+        }
+        return  contadorEntrenadores;
 
     }
 
