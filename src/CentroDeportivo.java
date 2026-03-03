@@ -78,7 +78,16 @@ public class CentroDeportivo {
     }
 
     public String mostrarEntrenadores() {
+        StringBuilder sb = new StringBuilder("Entrenadores: {");
 
+        for (int i = 0; i < NUM_MAX_ENTRENADORES; i++) {
+            if (entrenadores[i] != null) {
+                sb.append(entrenadores[i].toString());
+            }
+        }
+        sb.append("\n}");
+
+        return sb.toString();
 
     }
 
