@@ -39,4 +39,19 @@ public class Entrenador {
     public int getAñosExperiencia() {
         return añosExperiencia;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder  sb = new StringBuilder("Entrenador: {");
+
+        sb.append(String.format("\n id: %d", id));
+        sb.append(String.format("\n nombre: %s", nombre));
+        sb.append(String.format("\n especialidad: %s", especialidad));
+        sb.append(String.format("\n años de experiencia: %d", añosExperiencia));
+
+        sb.append("}");
+
+        return sb.toString();
+
+    }
 }
